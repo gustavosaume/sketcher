@@ -268,6 +268,7 @@
 				4482A3941C8CE16900C100F6 /* Sources */,
 				4482A3951C8CE16900C100F6 /* Frameworks */,
 				4482A3961C8CE16900C100F6 /* Resources */,
+				44184A691C98FF47008EA66A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -383,6 +384,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		44184A691C98FF47008EA66A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/FileBrowser.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4482A3941C8CE16900C100F6 /* Sources */ = {
