@@ -14,13 +14,19 @@ class RootWireframe {
   let sketchWireframe: SketchWireframeProtocol
 
   init() {
+    let selectInteractor = SelectSketchInteractor()
+    let selectPresenter = SelectSketchPresenter(interactor: selectInteractor)
+    selectInteractor.output = selectPresenter
+    let selectWireframe = SelectSketchWireframe(presenter: selectPresenter, pickerDelegate: selectPresenter)
+
+    sketchWireframe = SketchWireframe()
     let sketchInteractor = SketchInteractor()
-    let sketchPresenter = SketchPresenter(interactor: sketchInteractor)
+    let sketchPresenter = SketchPresenter(wireframe: sketchWireframe, interactor: sketchInteractor)
     sketchInteractor.output = sketchPresenter
+    sketchWireframe.presenter = sketchPresenter
+    sketchWireframe.addWireframe = selectWireframe
 
-    sketchWireframe = SketchWireframe(presenter: sketchPresenter)
-
-    
+    selectPresenter.selectModuleDelegate = sketchPresenter
   }
 
   func installRootViewControllerIntoWindow(window: UIWindow) {
