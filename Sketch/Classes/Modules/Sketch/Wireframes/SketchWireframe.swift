@@ -11,30 +11,35 @@ import UIKit
 
 
 protocol SketchWireframeProtocol: class {
-  var presenter: SketchPresenterProtocol! { get }
+  var presenter: SketchPresenterProtocol? { get set }
+  var addWireframe: SelectSketchWireframeProtocol? { get set }
 
   func presentFromWindow(window: UIWindow)
   func presentAddView()
 }
 
 class SketchWireframe {
-  let presenter: SketchPresenterProtocol!
+  var presenter: SketchPresenterProtocol?
+  var addWireframe: SelectSketchWireframeProtocol?
 
-  init(presenter: SketchPresenterProtocol) {
-    self.presenter = presenter
-  }
+  lazy var sketchViewController: SketchViewController = {
+    guard let presenter = self.presenter else {
+      fatalError("SketchPresenter not set")
+    }
+
+    return SketchViewController(presenter: presenter)
+  }()
 }
 
 
 extension SketchWireframe: SketchWireframeProtocol {
   func presentFromWindow(window: UIWindow) {
-    let rootViewController = SketchViewController(presenter: presenter)
-    let navController = UINavigationController(rootViewController: rootViewController)
+    let navController = UINavigationController(rootViewController: sketchViewController)
     window.rootViewController = navController
     window.makeKeyAndVisible()
   }
 
   func presentAddView() {
-
+    addWireframe?.presentFromViewController(sketchViewController)
   }
 }

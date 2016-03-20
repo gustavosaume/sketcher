@@ -7,14 +7,18 @@
 //
 
 import Foundation
+import UIKit
 
-
-protocol SelectSketchInteractorProtocol {}
+protocol SelectSketchInteractorProtocol {
+  func storeLastOpenedImage(image: UIImage)
+}
 
 class SelectSketchInteractor {
   weak var output: SelectSketchPresenterProtocol?
 }
 
 extension SelectSketchInteractor: SelectSketchInteractorProtocol {
+  func storeLastOpenedImage(image: UIImage) {
 
+  }
 }
