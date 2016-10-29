@@ -29,7 +29,7 @@ class RootWireframe {
     selectPresenter.selectModuleDelegate = sketchPresenter
   }
 
-  func installRootViewControllerIntoWindow(window: UIWindow) {
+  func installRootViewControllerIntoWindow(_ window: UIWindow) {
     sketchWireframe.presentFromWindow(window)
   }
 }

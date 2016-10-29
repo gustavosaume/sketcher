@@ -17,10 +17,10 @@ public protocol SketchPresenterProtocol: class {
   func toggleControls()
 }
 
-public class SketchPresenter: NSObject {
-  private let interactor: SketchInteractorProtocol
-  private let wireframe: SketchWireframeProtocol
-  public weak var sketchInterface: SketchViewInterface?
+open class SketchPresenter: NSObject {
+  fileprivate let interactor: SketchInteractorProtocol
+  fileprivate let wireframe: SketchWireframeProtocol
+  open weak var sketchInterface: SketchViewInterface?
 
   init(wireframe: SketchWireframeProtocol, interactor: SketchInteractorProtocol) {
     self.interactor = interactor
@@ -47,7 +47,7 @@ extension SketchPresenter: SketchPresenterProtocol {
 }
 
 extension SketchPresenter: SelectModuleDelegate {
- func selectModuleDidSelectImage(image: UIImage) {
+ func selectModuleDidSelectImage(_ image: UIImage) {
     sketchInterface?.showImage(image)
   }
 }

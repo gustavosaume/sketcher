@@ -14,7 +14,7 @@ protocol SketchWireframeProtocol: class {
   var presenter: SketchPresenterProtocol? { get set }
   var addWireframe: SelectSketchWireframeProtocol? { get set }
 
-  func presentFromWindow(window: UIWindow)
+  func presentFromWindow(_ window: UIWindow)
   func presentAddView()
 }
 
@@ -33,7 +33,7 @@ class SketchWireframe {
 
 
 extension SketchWireframe: SketchWireframeProtocol {
-  func presentFromWindow(window: UIWindow) {
+  func presentFromWindow(_ window: UIWindow) {
     let navController = UINavigationController(rootViewController: sketchViewController)
     window.rootViewController = navController
     window.makeKeyAndVisible()

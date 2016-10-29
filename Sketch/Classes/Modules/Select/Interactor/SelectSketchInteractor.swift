@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol SelectSketchInteractorProtocol {
-  func storeLastOpenedImage(image: UIImage)
+  func storeLastOpenedImage(_ image: UIImage)
 }
 
 class SelectSketchInteractor {
@@ -18,7 +18,7 @@ class SelectSketchInteractor {
 }
 
 extension SelectSketchInteractor: SelectSketchInteractorProtocol {
-  func storeLastOpenedImage(image: UIImage) {
+  func storeLastOpenedImage(_ image: UIImage) {
 
   }
 }

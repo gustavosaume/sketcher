@@ -7,17 +7,21 @@
 //
 
 import UIKit
+import Fabric
+import Crashlytics
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow? = {
-    return UIWindow(frame: UIScreen.mainScreen().bounds)
+    return UIWindow(frame: UIScreen.main.bounds)
   }()
 
   let rootWireframe = RootWireframe()
 
-  func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    Fabric.with([Crashlytics.self])
     rootWireframe.installRootViewControllerIntoWindow(window!)
     return true
   }

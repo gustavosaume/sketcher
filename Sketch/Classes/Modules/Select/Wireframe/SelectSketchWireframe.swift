@@ -12,27 +12,27 @@ import MobileCoreServices
 
 protocol SelectSketchWireframeProtocol {
   var presenter: SelectSketchPresenterProtocol { get }
-  func presentFromViewController(viewController: UIViewController)
+  func presentFromViewController(_ viewController: UIViewController)
 }
 
 
 class SelectSketchWireframe {
   let presenter: SelectSketchPresenterProtocol
-  private weak var pickerDelegate: protocol<UIImagePickerControllerDelegate, UINavigationControllerDelegate>?
+  fileprivate weak var pickerDelegate: (UIImagePickerControllerDelegate & UINavigationControllerDelegate)?
 
-  init(presenter: SelectSketchPresenterProtocol, pickerDelegate: protocol<UIImagePickerControllerDelegate, UINavigationControllerDelegate>?) {
+  init(presenter: SelectSketchPresenterProtocol, pickerDelegate: (UIImagePickerControllerDelegate & UINavigationControllerDelegate)?) {
     self.presenter = presenter
     self.pickerDelegate = pickerDelegate
   }
 }
 
 extension SelectSketchWireframe: SelectSketchWireframeProtocol {
-  func presentFromViewController(viewController: UIViewController) {
+  func presentFromViewController(_ viewController: UIViewController) {
     let pickerController = UIImagePickerController()
-    pickerController.sourceType = .PhotoLibrary
+    pickerController.sourceType = .photoLibrary
     pickerController.mediaTypes = [kUTTypeImage as String]
     pickerController.allowsEditing = false
     pickerController.delegate = pickerDelegate
-    viewController.presentViewController(pickerController, animated: true) {}
+    viewController.present(pickerController, animated: true) {}
   }
 }

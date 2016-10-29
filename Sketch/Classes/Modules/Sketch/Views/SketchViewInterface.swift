@@ -11,7 +11,7 @@ import UIKit
 
 public protocol SketchViewInterface: class {
   func showNoContentInterface()
-  func showImage(image: UIImage)
+  func showImage(_ image: UIImage)
   func lockImage()
   func unlockImage()
   func toggleControls()

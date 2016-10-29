@@ -14,12 +14,12 @@ protocol SelectSketchPresenterProtocol: class {
 }
 
 protocol SelectModuleDelegate: class {
-  func selectModuleDidSelectImage(image: UIImage)
+  func selectModuleDidSelectImage(_ image: UIImage)
 }
 
 
 class SelectSketchPresenter: NSObject {
-  private(set) var interactor: SelectSketchInteractorProtocol
+  fileprivate(set) var interactor: SelectSketchInteractorProtocol
   weak var selectModuleDelegate: SelectModuleDelegate?
 
   init(interactor: SelectSketchInteractorProtocol) {
@@ -28,10 +28,10 @@ class SelectSketchPresenter: NSObject {
 }
 
 extension SelectSketchPresenter: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-  func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
     interactor.storeLastOpenedImage(image)
     selectModuleDelegate?.selectModuleDidSelectImage(image)
-    picker.dismissViewControllerAnimated(true) {}
+    picker.dismiss(animated: true) {}
   }
 }
 
