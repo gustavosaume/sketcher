@@ -19,36 +19,39 @@ class SketchViewController: UIViewController {
 
   @IBOutlet weak var sketchImageView: UIImageView! {
     didSet {
-      let tapGesture = UITapGestureRecognizer(target: self.presenter, action: #selector(SketchPresenter.toggleControls))
+      let tapGesture = UITapGestureRecognizer(target: self.interactor, action: #selector(SketchInteractorProtocol.toggleControls))
       sketchImageView.addGestureRecognizer(tapGesture)
       sketchImageView.isUserInteractionEnabled = true
     }
   }
 
+  @IBOutlet weak var toolbar: UIToolbar!
+
+
+  let interactor: SketchInteractorProtocol
   let presenter: SketchPresenterProtocol
 
   lazy var addBarButton: UIBarButtonItem = {
-    return UIBarButtonItem(barButtonSystemItem: .add, target: self.presenter, action: #selector(SketchPresenter.presentLoadForm))
+    return UIBarButtonItem(barButtonSystemItem: .add, target: self.interactor, action: #selector(SketchInteractorProtocol.presentImagePicker))
   }()
 
   lazy var lockBarButton: UIBarButtonItem = {
-    return UIBarButtonItem(barButtonSystemItem: .pause, target: self.presenter, action: #selector(SketchPresenter.lockImage))
+    return UIBarButtonItem(barButtonSystemItem: .pause, target: self.interactor, action: #selector(SketchInteractorProtocol.lockImage))
   }()
 
   lazy var unlockBarButton: UIBarButtonItem = {
-    return UIBarButtonItem(barButtonSystemItem: .play, target: self.presenter, action: #selector(SketchPresenter.unlockImage))
+    return UIBarButtonItem(barButtonSystemItem: .play, target: self.interactor, action: #selector(SketchInteractorProtocol.unlockImage))
   }()
 
 
   // MARK: - Initializers
 
-  init(presenter: SketchPresenterProtocol) {
+  init(presenter: SketchPresenterProtocol, interactor: SketchInteractorProtocol) {
     self.presenter = presenter
+    self.interactor = interactor
 
     super.init(nibName: "SketchView", bundle: nil)
-
-    self.presenter.sketchInterface = self
-    self.automaticallyAdjustsScrollViewInsets = false
+    automaticallyAdjustsScrollViewInsets = false
   }
 
   required init?(coder aDecoder: NSCoder) {
@@ -63,20 +66,13 @@ class SketchViewController: UIViewController {
     navigationItem.rightBarButtonItem = addBarButton
     navigationItem.leftBarButtonItem = lockBarButton
     view.backgroundColor = UIColor.white
+    sketchImageView.image = presenter.image
   }
 }
 
 
 
 extension SketchViewController: SketchViewInterface {
-  func showNoContentInterface() {
-
-  }
-
-  func showImage(_ image: UIImage) {
-    sketchImageView.image = image
-  }
-
   func lockImage() {
     sketchScrollContainer.isScrollEnabled = false
     sketchScrollContainer.pinchGestureRecognizer?.isEnabled = false

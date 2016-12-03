@@ -9,9 +9,8 @@
 import Foundation
 import UIKit
 
-public protocol SketchViewInterface: class {
-  func showNoContentInterface()
-  func showImage(_ image: UIImage)
+@objc
+protocol SketchViewInterface: class {
   func lockImage()
   func unlockImage()
   func toggleControls()
