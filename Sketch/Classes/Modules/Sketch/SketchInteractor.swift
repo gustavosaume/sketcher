@@ -7,20 +7,22 @@
 //
 
 import Foundation
+import UIKit
 
 
-@objc
-protocol SketchInteractorProtocol {
+@objc protocol SketchInteractorProtocol: class {
   weak var interface: SketchViewInterface? { get set }
 
-  func presentImagePicker()
-  func lockImage()
-  func unlockImage()
-  func toggleControls()
+  @objc func presentImagePicker()
+  @objc func toggleImageLock(sender: UIButton)
+  @objc func toggleControls()
+
+  @objc func toggleEdgeDetection()
+  @objc func toggleBrightness()
 }
 
 protocol SketchCoordinatorProtocol: class {
-
+  func showImagePicker()
 }
 
 
@@ -32,18 +34,35 @@ class SketchInteractor {
 
 extension SketchInteractor: SketchInteractorProtocol {
   public func presentImagePicker() {
-//    coordinator?.showImagePicker()
+    coordinator?.showImagePicker()
   }
 
-  public func lockImage() {
-    interface?.lockImage()
-  }
+  public func toggleImageLock(sender: UIButton) {
+    let shouldUnlock = sender.isSelected
+    if shouldUnlock {
+      interface?.unlockImage()
+    } else {
+      interface?.lockImage()
+    }
 
-  public func unlockImage() {
-    interface?.unlockImage()
+    sender.isSelected = !shouldUnlock
   }
 
   public func toggleControls() {
     interface?.toggleControls()
+  }
+
+  public func toggleEdgeDetection() {
+    guard let interface = interface else { return }
+
+    let state: ToolbarState = interface.toolbarState == .edge ? .closed : .edge
+    interface.toolbarState = state
+  }
+
+  public func toggleBrightness() {
+    guard let interface = interface else { return }
+
+    let state: ToolbarState = interface.toolbarState == .brightness ? .closed : .brightness
+    interface.toolbarState = state
   }
 }

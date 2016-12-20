@@ -9,9 +9,16 @@
 import Foundation
 import UIKit
 
-@objc
-protocol SketchViewInterface: class {
+@objc enum ToolbarState: Int {
+  case closed, edge, brightness, hidden
+}
+
+
+@objc protocol SketchViewInterface: class {
+  var toolbarState: ToolbarState { get set }
+
   func lockImage()
   func unlockImage()
   func toggleControls()
+  func toggleToolbar(visible: Bool)
 }

@@ -19,29 +19,53 @@ class SketchViewController: UIViewController {
 
   @IBOutlet weak var sketchImageView: UIImageView! {
     didSet {
-      let tapGesture = UITapGestureRecognizer(target: self.interactor, action: #selector(SketchInteractorProtocol.toggleControls))
+      let tapGesture = UITapGestureRecognizer(target: interactor, action: #selector(SketchInteractorProtocol.toggleControls))
       sketchImageView.addGestureRecognizer(tapGesture)
       sketchImageView.isUserInteractionEnabled = true
     }
   }
 
-  @IBOutlet weak var toolbar: UIToolbar!
+  @IBOutlet weak var edgeBarButton: UIBarButtonItem! {
+    didSet {
+      edgeBarButton.target = interactor
+      edgeBarButton.action = #selector(SketchInteractorProtocol.toggleEdgeDetection)
+    }
+  }
 
+  @IBOutlet weak var brightnessBarButton: UIBarButtonItem! {
+    didSet {
+      brightnessBarButton.target = interactor
+      brightnessBarButton.action = #selector(SketchInteractorProtocol.toggleBrightness)
+    }
+  }
+
+  @IBOutlet weak var toolbarBottomDistance: NSLayoutConstraint!
+
+  @IBOutlet weak var brightnessControls: UIView!
+
+  @IBOutlet weak var edgeControls: UIView!
 
   let interactor: SketchInteractorProtocol
   let presenter: SketchPresenterProtocol
 
-  lazy var addBarButton: UIBarButtonItem = {
-    return UIBarButtonItem(barButtonSystemItem: .add, target: self.interactor, action: #selector(SketchInteractorProtocol.presentImagePicker))
-  }()
+  var toolbarState: ToolbarState = .closed {
+    didSet {
+      let distance: CGFloat
+      switch toolbarState {
+      case .closed: distance = 0.0
+      case .brightness: distance = 44.0
+      case .edge: distance = 44.0
+      case .hidden: distance = -44.0
+      }
 
-  lazy var lockBarButton: UIBarButtonItem = {
-    return UIBarButtonItem(barButtonSystemItem: .pause, target: self.interactor, action: #selector(SketchInteractorProtocol.lockImage))
-  }()
-
-  lazy var unlockBarButton: UIBarButtonItem = {
-    return UIBarButtonItem(barButtonSystemItem: .play, target: self.interactor, action: #selector(SketchInteractorProtocol.unlockImage))
-  }()
+      brightnessControls.isHidden = toolbarState != .brightness
+      edgeControls.isHidden = toolbarState != .edge
+      toolbarBottomDistance.constant = distance
+      UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: [.curveEaseInOut], animations: {
+        self.view.layoutIfNeeded()
+      }, completion: nil)
+    }
+  }
 
 
   // MARK: - Initializers
@@ -61,12 +85,15 @@ class SketchViewController: UIViewController {
 
   // MARK: - Lifecycle
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    navigationItem.rightBarButtonItem = addBarButton
-    navigationItem.leftBarButtonItem = lockBarButton
-    view.backgroundColor = UIColor.white
-    sketchImageView.image = presenter.image
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+
+    DispatchQueue.global(qos: .userInitiated).async {
+      let processedImage = self.presenter.image
+      DispatchQueue.main.async {
+        self.sketchImageView.image = processedImage
+      }
+    }
   }
 }
 
@@ -76,20 +103,22 @@ extension SketchViewController: SketchViewInterface {
   func lockImage() {
     sketchScrollContainer.isScrollEnabled = false
     sketchScrollContainer.pinchGestureRecognizer?.isEnabled = false
-    navigationItem.leftBarButtonItem = unlockBarButton
   }
 
   func unlockImage() {
     sketchScrollContainer.isScrollEnabled = true
     sketchScrollContainer.pinchGestureRecognizer?.isEnabled = true
-    navigationItem.leftBarButtonItem = lockBarButton
   }
 
   func toggleControls() {
-    guard let navigationController = navigationController else {
-      return
-    }
-    navigationController.setNavigationBarHidden(!navigationController.isNavigationBarHidden, animated: true)
+    guard let navigationController = navigationController else { return }
+    let showControls = navigationController.isNavigationBarHidden
+    navigationController.setNavigationBarHidden(!showControls, animated: true)
+    toggleToolbar(visible: showControls)
+  }
+
+  func toggleToolbar(visible: Bool) {
+    toolbarState = visible ? .closed : .hidden
   }
 }
 
