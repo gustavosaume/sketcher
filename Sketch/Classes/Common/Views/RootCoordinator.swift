@@ -50,7 +50,7 @@ final class RootCoordinator {
     emptyCoordinator = coordinator
   }
 
-  fileprivate func presentSketchView(sketch: Sketch? = nil) {
+  fileprivate func presentSketchView(sketch: Sketch) {
     let coordinator = SketchCoordinator(nav: navigationController, sketch: sketch)
     coordinator.delegate = self
     coordinator.start()

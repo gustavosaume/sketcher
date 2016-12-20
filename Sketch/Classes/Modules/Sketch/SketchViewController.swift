@@ -10,6 +10,9 @@ import UIKit
 
 class SketchViewController: UIViewController {
 
+
+  // MARK: - Outlets
+
   @IBOutlet weak var sketchScrollContainer: UIScrollView! {
     didSet {
       sketchScrollContainer.delegate = self
@@ -44,6 +47,9 @@ class SketchViewController: UIViewController {
   @IBOutlet weak var brightnessControls: UIView!
 
   @IBOutlet weak var edgeControls: UIView!
+
+
+  // MARK: - Public vars
 
   let interactor: SketchInteractorProtocol
   let presenter: SketchPresenterProtocol
@@ -87,7 +93,13 @@ class SketchViewController: UIViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    updateSketch()
+  }
 
+
+  // MARK: - File private behavior
+
+  fileprivate func updateSketch() {
     DispatchQueue.global(qos: .userInitiated).async {
       let processedImage = self.presenter.image
       DispatchQueue.main.async {

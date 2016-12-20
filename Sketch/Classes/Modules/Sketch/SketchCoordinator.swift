@@ -14,13 +14,13 @@ import UIKit
 final class SketchCoordinator: ChildCoordinator {
   weak var delegate: SketchCoordinatorProtocol?
 
-  let sketch: Sketch?
+  let sketch: Sketch
   let navigationController: UINavigationController
 
 
   // MARK: - Initialization
 
-  init(nav: UINavigationController, sketch: Sketch? = nil) {
+  init(nav: UINavigationController, sketch: Sketch) {
     self.sketch = sketch
     self.navigationController = nav
   }

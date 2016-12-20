@@ -10,17 +10,18 @@ import Foundation
 import UIKit
 
 protocol SketchPresenterProtocol: class {
+  var sketch: Sketch { get }
   var image: UIImage? { get }
 }
 
 class SketchPresenter {
-  let sketch: Sketch?
+  let sketch: Sketch
 
   var image: UIImage? {
-    return sketch?.processedImage
+    return sketch.processedImage
   }
 
-  init(sketch: Sketch? = nil) {
+  init(sketch: Sketch) {
     self.sketch = sketch
   }
 }
