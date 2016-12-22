@@ -19,6 +19,8 @@ import UIKit
 
   @objc func toggleEdgeDetection()
   @objc func toggleBrightness()
+
+  @objc func sliderChanged(brightnessSlider: UISlider)
 }
 
 protocol SketchCoordinatorProtocol: class {
@@ -64,5 +66,14 @@ extension SketchInteractor: SketchInteractorProtocol {
 
     let state: ToolbarState = interface.toolbarState == .brightness ? .closed : .brightness
     interface.toolbarState = state
+  }
+
+
+  // MARK: - Brightness
+
+  @objc func sliderChanged(brightnessSlider: UISlider) {
+    let value = brightnessSlider.value
+    UIScreen.main.wantsSoftwareDimming = false
+    UIScreen.main.brightness = CGFloat(value)
   }
 }

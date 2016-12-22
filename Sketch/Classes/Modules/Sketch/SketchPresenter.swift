@@ -9,10 +9,21 @@
 import Foundation
 import UIKit
 
+
 protocol SketchPresenterProtocol: class {
   var sketch: Sketch { get }
   var image: UIImage? { get }
+
+  var currentBrightness: Float { get }
 }
+
+
+extension SketchPresenterProtocol {
+  var currentBrightness: Float {
+    return Float(UIScreen.main.brightness)
+  }
+}
+
 
 class SketchPresenter {
   let sketch: Sketch
@@ -25,5 +36,6 @@ class SketchPresenter {
     self.sketch = sketch
   }
 }
+
 
 extension SketchPresenter: SketchPresenterProtocol {}

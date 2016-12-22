@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="brightnessBarButton" destination="Ydm-5Y-gcn" id="BHA-wR-g1F"/>
                 <outlet property="brightnessControls" destination="HhI-ea-6OK" id="4nC-5l-tFq"/>
+                <outlet property="brightnessSlider" destination="Ugy-NQ-URI" id="ryo-42-Ylq"/>
                 <outlet property="edgeBarButton" destination="tRu-js-KBg" id="Pyb-WZ-DPd"/>
                 <outlet property="edgeControls" destination="I5L-Cg-YNX" id="QEx-dR-jdm"/>
                 <outlet property="sketchImageView" destination="eCq-El-8Ab" id="5YQ-sx-Gh2"/>

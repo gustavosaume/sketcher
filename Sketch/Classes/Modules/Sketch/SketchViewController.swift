@@ -42,6 +42,13 @@ class SketchViewController: UIViewController {
     }
   }
 
+  @IBOutlet weak var brightnessSlider: UISlider! {
+    didSet {
+      brightnessSlider.value = presenter.currentBrightness
+      brightnessSlider.addTarget(interactor, action: #selector(SketchInteractorProtocol.sliderChanged(brightnessSlider:)), for: .valueChanged)
+    }
+  }
+
   @IBOutlet weak var toolbarBottomDistance: NSLayoutConstraint!
 
   @IBOutlet weak var brightnessControls: UIView!
@@ -93,13 +100,13 @@ class SketchViewController: UIViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    updateSketch()
+    redrawSketch()
   }
 
 
   // MARK: - File private behavior
 
-  fileprivate func updateSketch() {
+  fileprivate func redrawSketch() {
     DispatchQueue.global(qos: .userInitiated).async {
       let processedImage = self.presenter.image
       DispatchQueue.main.async {
