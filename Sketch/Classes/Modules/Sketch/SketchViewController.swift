@@ -143,7 +143,7 @@ class SketchViewController: UIViewController {
   // MARK: - File private behavior
 
   fileprivate func redrawSketch() {
-    DispatchQueue.global(qos: .userInitiated).async {
+    DispatchQueue.global(qos: .userInteractive).async {
       let processedImage = self.presenter.image
       DispatchQueue.main.async {
         self.sketchImageView.image = processedImage

@@ -20,24 +20,6 @@ struct Sketch {
     return [lineOverlayFilter].flatMap({ $0 as? CIFilterable }).map({ $0.ciFilter })
   }
 
-  var processedImage: UIImage {
-    let ciImage = CIImage(image: image)
-    let processedImageImage = filters.reduce(ciImage) { (image, filter) in
-      filter.setValue(image, forKey: kCIInputImageKey)
-      return filter.outputImage
-    }
-
-    guard let composedImage = processedImageImage else { return image }
-
-    let oglContext = EAGLContext(api: .openGLES2)
-    let context = CIContext(eaglContext: oglContext!)
-    guard let finalImage = context.createCGImage(composedImage, from: composedImage.extent) else {
-      return image
-    }
-
-    return UIImage(cgImage: finalImage)
-  }
-
   init(image: UIImage, lineOverlayFilter: LineOverlayFilter? = nil) {
     self.image = image
     self.lineOverlayFilter = lineOverlayFilter

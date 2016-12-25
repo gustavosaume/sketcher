@@ -34,9 +34,10 @@ extension SketchPresenterProtocol {
 
 class SketchPresenter {
   var sketch: Sketch
+  let imageComposer = FilterImageComposer()
 
   var image: UIImage? {
-    return sketch.processedImage
+    return imageComposer.compose(image: sketch.image, filters: sketch.filters)
   }
 
   init(sketch: Sketch) {
