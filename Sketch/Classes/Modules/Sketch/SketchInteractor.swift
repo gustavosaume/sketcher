@@ -21,6 +21,12 @@ import UIKit
   @objc func toggleBrightness()
 
   @objc func sliderChanged(brightnessSlider: UISlider)
+
+  @objc func lineOverlaySliderChanged(noiseSlider: UISlider)
+  @objc func lineOverlaySliderChanged(sharpnessSlider: UISlider)
+  @objc func lineOverlaySliderChanged(edgeIntensitySlider: UISlider)
+  @objc func lineOverlaySliderChanged(thresholdSlider: UISlider)
+  @objc func lineOverlaySliderChanged(contrastSlider: UISlider)
 }
 
 protocol SketchCoordinatorProtocol: class {
@@ -75,5 +81,48 @@ extension SketchInteractor: SketchInteractorProtocol {
     let value = brightnessSlider.value
     UIScreen.main.wantsSoftwareDimming = false
     UIScreen.main.brightness = CGFloat(value)
+  }
+
+
+  // MARK: - Line overlay
+
+  @objc func lineOverlaySliderChanged(noiseSlider: UISlider) {
+    let filters = interface?.currentFilters ?? FiltersBridge()
+    let lineOverlayFilter = filters.lineOverlayFilter ?? LineOverlayFilter()
+    let noise = noiseSlider.value
+    filters.lineOverlayFilter = LineOverlayFilter(noiseLevel: noise, filter: lineOverlayFilter)
+    interface?.update(filters: filters)
+  }
+
+  @objc func lineOverlaySliderChanged(sharpnessSlider: UISlider) {
+    let filters = interface?.currentFilters ?? FiltersBridge()
+    let lineOverlayFilter = filters.lineOverlayFilter ?? LineOverlayFilter()
+    let sharpness = sharpnessSlider.value
+    filters.lineOverlayFilter = LineOverlayFilter(sharpness: sharpness, filter: lineOverlayFilter)
+    interface?.update(filters: filters)
+  }
+
+  @objc func lineOverlaySliderChanged(edgeIntensitySlider: UISlider) {
+    let filters = interface?.currentFilters ?? FiltersBridge()
+    let lineOverlayFilter = filters.lineOverlayFilter ?? LineOverlayFilter()
+    let edgeIntensity = edgeIntensitySlider.value
+    filters.lineOverlayFilter = LineOverlayFilter(edgeIntensity: edgeIntensity, filter: lineOverlayFilter)
+    interface?.update(filters: filters)
+  }
+
+  @objc func lineOverlaySliderChanged(thresholdSlider: UISlider) {
+  let filters = interface?.currentFilters ?? FiltersBridge()
+    let lineOverlayFilter = filters.lineOverlayFilter ?? LineOverlayFilter()
+    let threshold = thresholdSlider.value
+    filters.lineOverlayFilter = LineOverlayFilter(threshold: threshold, filter: lineOverlayFilter)
+    interface?.update(filters: filters)
+  }
+
+  @objc func lineOverlaySliderChanged(contrastSlider: UISlider) {
+    let filters = interface?.currentFilters ?? FiltersBridge()
+    let lineOverlayFilter = filters.lineOverlayFilter ?? LineOverlayFilter()
+    let contrast = contrastSlider.value
+    filters.lineOverlayFilter = LineOverlayFilter(contrast: contrast, filter: lineOverlayFilter)
+    interface?.update(filters: filters)
   }
 }

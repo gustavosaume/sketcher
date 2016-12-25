@@ -49,6 +49,42 @@ class SketchViewController: UIViewController {
     }
   }
 
+  @IBOutlet weak var lineOverlayNoiseSlider: UISlider! {
+    didSet {
+      lineOverlayNoiseSlider.value = presenter.currentFilters.lineOverlayFilter?.noiseLevel ?? 0.07
+      lineOverlayNoiseSlider.addTarget(interactor, action: #selector(SketchInteractorProtocol.lineOverlaySliderChanged(noiseSlider:)), for: .valueChanged)
+    }
+  }
+
+  @IBOutlet weak var lineOverlaySharpnessSlider: UISlider! {
+    didSet {
+      lineOverlaySharpnessSlider.value = presenter.currentFilters.lineOverlayFilter?.sharpness ?? 0.71
+      lineOverlaySharpnessSlider.addTarget(interactor, action: #selector(SketchInteractorProtocol.lineOverlaySliderChanged(sharpnessSlider:)), for: .valueChanged)
+    }
+  }
+
+  @IBOutlet weak var lineOverlayEdgeIntensitySlider: UISlider! {
+    didSet {
+      lineOverlayEdgeIntensitySlider.value = presenter.currentFilters.lineOverlayFilter?.edgeIntensity ?? 1.0
+      lineOverlayEdgeIntensitySlider.addTarget(interactor, action: #selector(SketchInteractorProtocol.lineOverlaySliderChanged(edgeIntensitySlider:)), for: .valueChanged)
+    }
+  }
+
+  @IBOutlet weak var lineOverlayThresholdSlider: UISlider! {
+    didSet {
+      lineOverlayThresholdSlider.value = presenter.currentFilters.lineOverlayFilter?.threshold ?? 0.1
+      lineOverlayThresholdSlider.addTarget(interactor, action: #selector(SketchInteractorProtocol.lineOverlaySliderChanged(thresholdSlider:)), for: .valueChanged)
+    }
+  }
+
+  @IBOutlet weak var lineOverlayContrastSlider: UISlider! {
+    didSet {
+      lineOverlayContrastSlider.value = presenter.currentFilters.lineOverlayFilter?.contrast ?? 50.0
+      lineOverlayContrastSlider.addTarget(interactor, action: #selector(SketchInteractorProtocol.lineOverlaySliderChanged(contrastSlider:)), for: .valueChanged)
+    }
+  }
+
+
   @IBOutlet weak var toolbarBottomDistance: NSLayoutConstraint!
 
   @IBOutlet weak var brightnessControls: UIView!
@@ -67,7 +103,7 @@ class SketchViewController: UIViewController {
       switch toolbarState {
       case .closed: distance = 0.0
       case .brightness: distance = 44.0
-      case .edge: distance = 44.0
+      case .edge: distance = 242.0
       case .hidden: distance = -44.0
       }
 
@@ -119,6 +155,10 @@ class SketchViewController: UIViewController {
 
 
 extension SketchViewController: SketchViewInterface {
+  var currentFilters: FiltersBridge {
+    return presenter.currentFilters
+  }
+
   func lockImage() {
     sketchScrollContainer.isScrollEnabled = false
     sketchScrollContainer.pinchGestureRecognizer?.isEnabled = false
@@ -138,6 +178,11 @@ extension SketchViewController: SketchViewInterface {
 
   func toggleToolbar(visible: Bool) {
     toolbarState = visible ? .closed : .hidden
+  }
+
+  func update(filters: FiltersBridge) {
+    presenter.update(filters: filters)
+    redrawSketch()
   }
 }
 

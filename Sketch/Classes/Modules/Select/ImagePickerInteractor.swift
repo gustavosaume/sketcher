@@ -24,7 +24,7 @@ class ImagePickerInteractor: NSObject {
 
 extension ImagePickerInteractor: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-    let sketch = Sketch(image: image, filters: [])
+    let sketch = Sketch(image: image)
     coordinator?.display(sketch)
   }
 }

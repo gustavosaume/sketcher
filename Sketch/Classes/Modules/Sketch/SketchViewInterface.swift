@@ -16,9 +16,20 @@ import UIKit
 
 @objc protocol SketchViewInterface: class {
   var toolbarState: ToolbarState { get set }
+  var currentFilters: FiltersBridge { get }
 
   func lockImage()
   func unlockImage()
   func toggleControls()
   func toggleToolbar(visible: Bool)
+
+  func update(filters: FiltersBridge)
+}
+
+class FiltersBridge: NSObject {
+  var lineOverlayFilter: LineOverlayFilter?
+
+  init(lineOverlayFilter: LineOverlayFilter? = nil) {
+    self.lineOverlayFilter = lineOverlayFilter
+  }
 }

@@ -20,6 +20,7 @@
 		445BB56D1DF35EB2003FFD5D /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BB56C1DF35EB2003FFD5D /* EmptyViewController.swift */; };
 		445BB56F1DF361B1003FFD5D /* EmptyViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BB56E1DF361B1003FFD5D /* EmptyViewCoordinator.swift */; };
 		445BB5711DF36398003FFD5D /* EmptyViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BB5701DF36398003FFD5D /* EmptyViewInteractor.swift */; };
+		4461890F1E0DA67900193D4A /* LineOverlayFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461890E1E0DA67900193D4A /* LineOverlayFilter.swift */; };
 		447100BF1DDAB4A200561421 /* ImagePickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447100BE1DDAB4A200561421 /* ImagePickerCoordinator.swift */; };
 		447100C11DDAB4E200561421 /* SketchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447100C01DDAB4E200561421 /* SketchCoordinator.swift */; };
 		4482A3A51C8CE16900C100F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4482A3A41C8CE16900C100F6 /* Assets.xcassets */; };
@@ -75,6 +76,7 @@
 		445BB56C1DF35EB2003FFD5D /* EmptyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyViewController.swift; path = Classes/Modules/Empty/EmptyViewController.swift; sourceTree = "<group>"; };
 		445BB56E1DF361B1003FFD5D /* EmptyViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyViewCoordinator.swift; path = Classes/Modules/Empty/EmptyViewCoordinator.swift; sourceTree = "<group>"; };
 		445BB5701DF36398003FFD5D /* EmptyViewInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyViewInteractor.swift; path = Classes/Modules/Empty/EmptyViewInteractor.swift; sourceTree = "<group>"; };
+		4461890E1E0DA67900193D4A /* LineOverlayFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineOverlayFilter.swift; path = Classes/Common/Models/LineOverlayFilter.swift; sourceTree = "<group>"; };
 		447100BE1DDAB4A200561421 /* ImagePickerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePickerCoordinator.swift; path = Classes/Modules/Select/ImagePickerCoordinator.swift; sourceTree = "<group>"; };
 		447100C01DDAB4E200561421 /* SketchCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SketchCoordinator.swift; path = Classes/Modules/Sketch/SketchCoordinator.swift; sourceTree = "<group>"; };
 		4482A3981C8CE16900C100F6 /* Sketch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sketch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				449D55E21DD01E4400E0707E /* Sketch.swift */,
+				4461890E1E0DA67900193D4A /* LineOverlayFilter.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				44184A701C9DE70B008EA66A /* SketchViewInterface.swift in Sources */,
 				447100BF1DDAB4A200561421 /* ImagePickerCoordinator.swift in Sources */,
 				441449151C926D620006BB68 /* RootCoordinator.swift in Sources */,
+				4461890F1E0DA67900193D4A /* LineOverlayFilter.swift in Sources */,
 				447100C11DDAB4E200561421 /* SketchCoordinator.swift in Sources */,
 				441449171C9271BF0006BB68 /* SketchViewController.swift in Sources */,
 				4414491A1C92736E0006BB68 /* SketchPresenter.swift in Sources */,
