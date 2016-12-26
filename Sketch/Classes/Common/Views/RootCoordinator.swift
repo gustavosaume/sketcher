@@ -74,18 +74,13 @@ extension RootCoordinator: EmptyViewCoordinatorProtocol {
 }
 
 
-extension RootCoordinator: SketchCoordinatorProtocol {
-
-}
-
+extension RootCoordinator: SketchCoordinatorProtocol {}
 
 
 extension RootCoordinator: ImagePickerCoordinatorProtocol {
   func display(_ sketch: Sketch) {
     imagePickerCoordinator = nil
     presentSketchView(sketch: sketch)
-    navigationController.dismiss(animated: true, completion: {
-      print("DONE")
-    })
+    navigationController.dismiss(animated: true, completion: nil)
   }
 }
