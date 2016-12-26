@@ -7,21 +7,47 @@
 //
 
 import Foundation
+import UIKit
 
-protocol SketchPresenterProtocol: class {
+public protocol SketchPresenterProtocol: class {
+  weak var sketchInterface: SketchViewInterface? { get set }
   func presentLoadForm()
+  func lockImage()
+  func unlockImage()
+  func toggleControls()
 }
 
-class SketchPresenter {
-  private(set) var interactor: SketchInteractorProtocol
+public class SketchPresenter: NSObject {
+  private let interactor: SketchInteractorProtocol
+  private let wireframe: SketchWireframeProtocol
+  public weak var sketchInterface: SketchViewInterface?
 
-  init(interactor: SketchInteractorProtocol) {
+  init(wireframe: SketchWireframeProtocol, interactor: SketchInteractorProtocol) {
     self.interactor = interactor
+    self.wireframe = wireframe
   }
 }
 
 extension SketchPresenter: SketchPresenterProtocol {
-  func presentLoadForm() {
-    print("ALERT")
+  public func presentLoadForm() {
+    wireframe.presentAddView()
+  }
+
+  public func lockImage() {
+    sketchInterface?.lockImage()
+  }
+
+  public func unlockImage() {
+    sketchInterface?.unlockImage()
+  }
+
+  public func toggleControls() {
+    sketchInterface?.toggleControls()
+  }
+}
+
+extension SketchPresenter: SelectModuleDelegate {
+ func selectModuleDidSelectImage(image: UIImage) {
+    sketchInterface?.showImage(image)
   }
 }

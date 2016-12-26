@@ -10,17 +10,44 @@ import UIKit
 
 class SketchViewController: UIViewController {
 
-  @IBOutlet weak var sketchScrollContainer: UIScrollView!
-  @IBOutlet weak var sketchImageView: UIImageView!
+  @IBOutlet weak var sketchScrollContainer: UIScrollView! {
+    didSet {
+      sketchScrollContainer.delegate = self
+      sketchScrollContainer.maximumZoomScale = 5.0
+    }
+  }
+
+  @IBOutlet weak var sketchImageView: UIImageView! {
+    didSet {
+      let tapGesture = UITapGestureRecognizer(target: self.presenter, action: "toggleControls")
+      sketchImageView.addGestureRecognizer(tapGesture)
+      sketchImageView.userInteractionEnabled = true
+    }
+  }
 
   let presenter: SketchPresenterProtocol
+
+  lazy var addBarButton: UIBarButtonItem = {
+    return UIBarButtonItem(barButtonSystemItem: .Add, target: self.presenter, action: "presentLoadForm")
+  }()
+
+  lazy var lockBarButton: UIBarButtonItem = {
+    return UIBarButtonItem(barButtonSystemItem: .Pause, target: self.presenter, action: "lockImage")
+  }()
+
+  lazy var unlockBarButton: UIBarButtonItem = {
+    return UIBarButtonItem(barButtonSystemItem: .Play, target: self.presenter, action: "unlockImage")
+  }()
+
 
   // MARK: - Initializers
 
   init(presenter: SketchPresenterProtocol) {
     self.presenter = presenter
+
     super.init(nibName: "SketchView", bundle: nil)
 
+    self.presenter.sketchInterface = self
     self.automaticallyAdjustsScrollViewInsets = false
   }
 
@@ -33,15 +60,45 @@ class SketchViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    configureNavBar()
-    self.view.backgroundColor = UIColor.whiteColor()
+    navigationItem.rightBarButtonItem = addBarButton
+    navigationItem.leftBarButtonItem = lockBarButton
+    view.backgroundColor = UIColor.whiteColor()
+  }
+}
+
+
+
+extension SketchViewController: SketchViewInterface {
+  func showNoContentInterface() {
+
   }
 
+  func showImage(image: UIImage) {
+    sketchImageView.image = image
+  }
 
-  // MARK: - UI Stuff
+  func lockImage() {
+    sketchScrollContainer.scrollEnabled = false
+    sketchScrollContainer.pinchGestureRecognizer?.enabled = false
+    navigationItem.leftBarButtonItem = unlockBarButton
+  }
 
-  private func configureNavBar() {
-    let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: presenter, action: "presentLoadForm")
-    navigationItem.rightBarButtonItem = addButton
+  func unlockImage() {
+    sketchScrollContainer.scrollEnabled = true
+    sketchScrollContainer.pinchGestureRecognizer?.enabled = true
+    navigationItem.leftBarButtonItem = lockBarButton
+  }
+
+  func toggleControls() {
+    guard let navigationController = navigationController else {
+      return
+    }
+    navigationController.setNavigationBarHidden(!navigationController.navigationBarHidden, animated: true)
+  }
+}
+
+extension SketchViewController: UIScrollViewDelegate {
+  func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+    return sketchImageView
   }
 }

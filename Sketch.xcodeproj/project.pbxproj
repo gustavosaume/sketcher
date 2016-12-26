@@ -17,6 +17,7 @@
 		44184A641C98F3F6008EA66A /* SelectSketchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44184A631C98F3F6008EA66A /* SelectSketchPresenter.swift */; };
 		44184A661C98F410008EA66A /* SelectSketchWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44184A651C98F410008EA66A /* SelectSketchWireframe.swift */; };
 		44184A681C98F545008EA66A /* SelectSketchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44184A671C98F545008EA66A /* SelectSketchInteractor.swift */; };
+		44184A701C9DE70B008EA66A /* SketchViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44184A6F1C9DE70B008EA66A /* SketchViewInterface.swift */; };
 		4482A3A51C8CE16900C100F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4482A3A41C8CE16900C100F6 /* Assets.xcassets */; };
 		4482A3A81C8CE16900C100F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4482A3A61C8CE16900C100F6 /* LaunchScreen.storyboard */; };
 		4482A3B31C8CE16900C100F6 /* SketchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4482A3B21C8CE16900C100F6 /* SketchTests.swift */; };
@@ -40,6 +41,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		44184A6D1C9A4598008EA66A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		441449111C926CA90006BB68 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Classes/AppDelegate.swift; sourceTree = "<group>"; };
 		441449141C926D620006BB68 /* RootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootWireframe.swift; path = Classes/Common/Views/RootWireframe.swift; sourceTree = "<group>"; };
@@ -51,6 +65,8 @@
 		44184A631C98F3F6008EA66A /* SelectSketchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectSketchPresenter.swift; path = Classes/Modules/Select/Presenters/SelectSketchPresenter.swift; sourceTree = "<group>"; };
 		44184A651C98F410008EA66A /* SelectSketchWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectSketchWireframe.swift; path = Classes/Modules/Select/Wireframe/SelectSketchWireframe.swift; sourceTree = "<group>"; };
 		44184A671C98F545008EA66A /* SelectSketchInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectSketchInteractor.swift; path = Classes/Modules/Select/Interactor/SelectSketchInteractor.swift; sourceTree = "<group>"; };
+		44184A6A1C9A4598008EA66A /* FileBrowser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FileBrowser.framework; path = ../Carthage/Build/iOS/FileBrowser.framework; sourceTree = "<group>"; };
+		44184A6F1C9DE70B008EA66A /* SketchViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SketchViewInterface.swift; path = Classes/Modules/Sketch/Views/SketchViewInterface.swift; sourceTree = "<group>"; };
 		4482A3981C8CE16900C100F6 /* Sketch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sketch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4482A3A41C8CE16900C100F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4482A3A71C8CE16900C100F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -123,6 +139,7 @@
 			children = (
 				44184A531C94C3CF008EA66A /* SketchView.xib */,
 				441449161C9271BF0006BB68 /* SketchViewController.swift */,
+				44184A6F1C9DE70B008EA66A /* SketchViewInterface.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -209,6 +226,14 @@
 			name = Wireframes;
 			sourceTree = "<group>";
 		};
+		44184A6E1C9A45A8008EA66A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44184A6A1C9A4598008EA66A /* FileBrowser.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4482A38F1C8CE16900C100F6 = {
 			isa = PBXGroup;
 			children = (
@@ -232,10 +257,11 @@
 		4482A39A1C8CE16900C100F6 /* Sketch */ = {
 			isa = PBXGroup;
 			children = (
-				4414490C1C9267AD0006BB68 /* Classes */,
 				4482A3A41C8CE16900C100F6 /* Assets.xcassets */,
-				4482A3A61C8CE16900C100F6 /* LaunchScreen.storyboard */,
+				4414490C1C9267AD0006BB68 /* Classes */,
+				44184A6E1C9A45A8008EA66A /* Frameworks */,
 				4482A3A91C8CE16900C100F6 /* Info.plist */,
+				4482A3A61C8CE16900C100F6 /* LaunchScreen.storyboard */,
 			);
 			path = Sketch;
 			sourceTree = "<group>";
@@ -268,6 +294,8 @@
 				4482A3941C8CE16900C100F6 /* Sources */,
 				4482A3951C8CE16900C100F6 /* Frameworks */,
 				4482A3961C8CE16900C100F6 /* Resources */,
+				44184A691C98FF47008EA66A /* ShellScript */,
+				44184A6D1C9A4598008EA66A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -384,6 +412,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		44184A691C98FF47008EA66A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4482A3941C8CE16900C100F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -391,6 +435,7 @@
 			files = (
 				44184A641C98F3F6008EA66A /* SelectSketchPresenter.swift in Sources */,
 				4414491D1C9275AB0006BB68 /* SketchInteractor.swift in Sources */,
+				44184A701C9DE70B008EA66A /* SketchViewInterface.swift in Sources */,
 				44184A661C98F410008EA66A /* SelectSketchWireframe.swift in Sources */,
 				441449151C926D620006BB68 /* RootWireframe.swift in Sources */,
 				441449171C9271BF0006BB68 /* SketchViewController.swift in Sources */,
@@ -530,6 +575,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Sketch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bigpanza.Sketch;
@@ -543,6 +592,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Sketch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bigpanza.Sketch;
