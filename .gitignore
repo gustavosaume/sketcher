@@ -3,4 +3,5 @@ Carthage/Checkouts
 *.xcuserstate
 xcuseddata/*
 xcdebugger/
+Sketch.xcodeproj/xcuserdata/gsa.xcuserdatad/
 
