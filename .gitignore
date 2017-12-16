@@ -1,2 +1,6 @@
 Carthage/Build
 Carthage/Checkouts
+*.xcuserstate
+xcuseddata/*
+xcdebugger/
+

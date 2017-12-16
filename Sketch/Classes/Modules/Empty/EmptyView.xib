@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmptyViewController" customModule="Sketch" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="cdM-Qf-8DZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8G7-dK-R7R">
+                    <rect key="frame" x="20" y="303" width="335" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="vdW-fp-Cb2"/>
+                    </constraints>
+                    <state key="normal" title="Select photos"/>
+                    <connections>
+                        <action selector="selectPhoto:" destination="-1" eventType="touchUpInside" id="fXz-XZ-A2p"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start sketching" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTk-Po-xsN" userLabel="Title">
+                    <rect key="frame" x="97" y="237" width="181.5" height="33.5"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="8G7-dK-R7R" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="096-o9-48h"/>
+                <constraint firstItem="8G7-dK-R7R" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="BmN-dD-keo"/>
+                <constraint firstItem="8G7-dK-R7R" firstAttribute="top" secondItem="dTk-Po-xsN" secondAttribute="bottom" constant="33" id="YlM-vS-tYe"/>
+                <constraint firstAttribute="trailing" secondItem="8G7-dK-R7R" secondAttribute="trailing" constant="20" id="id5-cd-0XS"/>
+                <constraint firstItem="dTk-Po-xsN" firstAttribute="centerX" secondItem="8G7-dK-R7R" secondAttribute="centerX" id="kcV-rb-CEb"/>
+                <constraint firstItem="8G7-dK-R7R" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="koG-oI-6lt"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

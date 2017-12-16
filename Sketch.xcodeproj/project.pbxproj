@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		441449121C926CA90006BB68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441449111C926CA90006BB68 /* AppDelegate.swift */; };
-		441449151C926D620006BB68 /* RootWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441449141C926D620006BB68 /* RootWireframe.swift */; };
+		441449151C926D620006BB68 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441449141C926D620006BB68 /* RootCoordinator.swift */; };
 		441449171C9271BF0006BB68 /* SketchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441449161C9271BF0006BB68 /* SketchViewController.swift */; };
 		4414491A1C92736E0006BB68 /* SketchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441449191C92736E0006BB68 /* SketchPresenter.swift */; };
 		4414491D1C9275AB0006BB68 /* SketchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4414491C1C9275AB0006BB68 /* SketchInteractor.swift */; };
-		44184A541C94C3CF008EA66A /* SketchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44184A531C94C3CF008EA66A /* SketchView.xib */; };
-		44184A561C94D6F7008EA66A /* SketchWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44184A551C94D6F7008EA66A /* SketchWireframe.swift */; };
-		44184A641C98F3F6008EA66A /* SelectSketchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44184A631C98F3F6008EA66A /* SelectSketchPresenter.swift */; };
-		44184A661C98F410008EA66A /* SelectSketchWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44184A651C98F410008EA66A /* SelectSketchWireframe.swift */; };
-		44184A681C98F545008EA66A /* SelectSketchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44184A671C98F545008EA66A /* SelectSketchInteractor.swift */; };
+		4415B15A1D8826C700FAE55A /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4415B1581D8826C700FAE55A /* Fabric.framework */; };
+		4415B15B1D8826C700FAE55A /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4415B1591D8826C700FAE55A /* Crashlytics.framework */; };
+		44184A681C98F545008EA66A /* ImagePickerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44184A671C98F545008EA66A /* ImagePickerInteractor.swift */; };
 		44184A701C9DE70B008EA66A /* SketchViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44184A6F1C9DE70B008EA66A /* SketchViewInterface.swift */; };
+		445BB56B1DF35C24003FFD5D /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 445BB56A1DF35C24003FFD5D /* EmptyView.xib */; };
+		445BB56D1DF35EB2003FFD5D /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BB56C1DF35EB2003FFD5D /* EmptyViewController.swift */; };
+		445BB56F1DF361B1003FFD5D /* EmptyViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BB56E1DF361B1003FFD5D /* EmptyViewCoordinator.swift */; };
+		445BB5711DF36398003FFD5D /* EmptyViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BB5701DF36398003FFD5D /* EmptyViewInteractor.swift */; };
+		4461890F1E0DA67900193D4A /* LineOverlayFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461890E1E0DA67900193D4A /* LineOverlayFilter.swift */; };
+		446189111E10506400193D4A /* FilterImageComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446189101E10506400193D4A /* FilterImageComposer.swift */; };
+		447100BF1DDAB4A200561421 /* ImagePickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447100BE1DDAB4A200561421 /* ImagePickerCoordinator.swift */; };
+		447100C11DDAB4E200561421 /* SketchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447100C01DDAB4E200561421 /* SketchCoordinator.swift */; };
 		4482A3A51C8CE16900C100F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4482A3A41C8CE16900C100F6 /* Assets.xcassets */; };
 		4482A3A81C8CE16900C100F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4482A3A61C8CE16900C100F6 /* LaunchScreen.storyboard */; };
 		4482A3B31C8CE16900C100F6 /* SketchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4482A3B21C8CE16900C100F6 /* SketchTests.swift */; };
 		4482A3BE1C8CE16900C100F6 /* SketchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4482A3BD1C8CE16900C100F6 /* SketchUITests.swift */; };
+		449D55E31DD01E4400E0707E /* Sketch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D55E21DD01E4400E0707E /* Sketch.swift */; };
+		44EF1E3A1DD905F000E22540 /* SketchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44EF1E391DD905F000E22540 /* SketchView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,17 +64,23 @@
 
 /* Begin PBXFileReference section */
 		441449111C926CA90006BB68 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Classes/AppDelegate.swift; sourceTree = "<group>"; };
-		441449141C926D620006BB68 /* RootWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootWireframe.swift; path = Classes/Common/Views/RootWireframe.swift; sourceTree = "<group>"; };
-		441449161C9271BF0006BB68 /* SketchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SketchViewController.swift; path = Classes/Modules/Sketch/Views/SketchViewController.swift; sourceTree = "<group>"; };
-		441449191C92736E0006BB68 /* SketchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SketchPresenter.swift; path = Classes/Modules/Sketch/Presenters/SketchPresenter.swift; sourceTree = "<group>"; };
-		4414491C1C9275AB0006BB68 /* SketchInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SketchInteractor.swift; path = Classes/Modules/Sketch/Interactors/SketchInteractor.swift; sourceTree = "<group>"; };
-		44184A531C94C3CF008EA66A /* SketchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SketchView.xib; path = Classes/Modules/Sketch/Views/SketchView.xib; sourceTree = "<group>"; };
-		44184A551C94D6F7008EA66A /* SketchWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SketchWireframe.swift; path = Classes/Modules/Sketch/Wireframes/SketchWireframe.swift; sourceTree = "<group>"; };
-		44184A631C98F3F6008EA66A /* SelectSketchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectSketchPresenter.swift; path = Classes/Modules/Select/Presenters/SelectSketchPresenter.swift; sourceTree = "<group>"; };
-		44184A651C98F410008EA66A /* SelectSketchWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectSketchWireframe.swift; path = Classes/Modules/Select/Wireframe/SelectSketchWireframe.swift; sourceTree = "<group>"; };
-		44184A671C98F545008EA66A /* SelectSketchInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectSketchInteractor.swift; path = Classes/Modules/Select/Interactor/SelectSketchInteractor.swift; sourceTree = "<group>"; };
+		441449141C926D620006BB68 /* RootCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootCoordinator.swift; path = Classes/Common/Views/RootCoordinator.swift; sourceTree = "<group>"; };
+		441449161C9271BF0006BB68 /* SketchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SketchViewController.swift; path = Classes/Modules/Sketch/SketchViewController.swift; sourceTree = "<group>"; };
+		441449191C92736E0006BB68 /* SketchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SketchPresenter.swift; path = Classes/Modules/Sketch/SketchPresenter.swift; sourceTree = "<group>"; };
+		4414491C1C9275AB0006BB68 /* SketchInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SketchInteractor.swift; path = Classes/Modules/Sketch/SketchInteractor.swift; sourceTree = "<group>"; };
+		4415B1581D8826C700FAE55A /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		4415B1591D8826C700FAE55A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
+		44184A671C98F545008EA66A /* ImagePickerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePickerInteractor.swift; path = Classes/Modules/Select/ImagePickerInteractor.swift; sourceTree = "<group>"; };
 		44184A6A1C9A4598008EA66A /* FileBrowser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FileBrowser.framework; path = ../Carthage/Build/iOS/FileBrowser.framework; sourceTree = "<group>"; };
-		44184A6F1C9DE70B008EA66A /* SketchViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SketchViewInterface.swift; path = Classes/Modules/Sketch/Views/SketchViewInterface.swift; sourceTree = "<group>"; };
+		44184A6F1C9DE70B008EA66A /* SketchViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SketchViewInterface.swift; path = Classes/Modules/Sketch/SketchViewInterface.swift; sourceTree = "<group>"; };
+		445BB56A1DF35C24003FFD5D /* EmptyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EmptyView.xib; path = Classes/Modules/Empty/EmptyView.xib; sourceTree = "<group>"; };
+		445BB56C1DF35EB2003FFD5D /* EmptyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyViewController.swift; path = Classes/Modules/Empty/EmptyViewController.swift; sourceTree = "<group>"; };
+		445BB56E1DF361B1003FFD5D /* EmptyViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyViewCoordinator.swift; path = Classes/Modules/Empty/EmptyViewCoordinator.swift; sourceTree = "<group>"; };
+		445BB5701DF36398003FFD5D /* EmptyViewInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyViewInteractor.swift; path = Classes/Modules/Empty/EmptyViewInteractor.swift; sourceTree = "<group>"; };
+		4461890E1E0DA67900193D4A /* LineOverlayFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineOverlayFilter.swift; path = Classes/Common/Models/LineOverlayFilter.swift; sourceTree = "<group>"; };
+		446189101E10506400193D4A /* FilterImageComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterImageComposer.swift; sourceTree = "<group>"; };
+		447100BE1DDAB4A200561421 /* ImagePickerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePickerCoordinator.swift; path = Classes/Modules/Select/ImagePickerCoordinator.swift; sourceTree = "<group>"; };
+		447100C01DDAB4E200561421 /* SketchCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SketchCoordinator.swift; path = Classes/Modules/Sketch/SketchCoordinator.swift; sourceTree = "<group>"; };
 		4482A3981C8CE16900C100F6 /* Sketch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sketch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4482A3A41C8CE16900C100F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4482A3A71C8CE16900C100F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -77,6 +91,8 @@
 		4482A3B91C8CE16900C100F6 /* SketchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SketchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4482A3BD1C8CE16900C100F6 /* SketchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SketchUITests.swift; sourceTree = "<group>"; };
 		4482A3BF1C8CE16900C100F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		449D55E21DD01E4400E0707E /* Sketch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sketch.swift; path = Classes/Common/Models/Sketch.swift; sourceTree = "<group>"; };
+		44EF1E391DD905F000E22540 /* SketchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SketchView.xib; path = Classes/Modules/Sketch/SketchView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +100,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4415B15B1D8826C700FAE55A /* Crashlytics.framework in Frameworks */,
+				4415B15A1D8826C700FAE55A /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +135,7 @@
 		4414490D1C926B5B0006BB68 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				445BB5691DF35B16003FFD5D /* Empty */,
 				44184A571C97B51F008EA66A /* Select */,
 				4414490E1C926B660006BB68 /* Sketch */,
 			);
@@ -126,28 +145,23 @@
 		4414490E1C926B660006BB68 /* Sketch */ = {
 			isa = PBXGroup;
 			children = (
-				4414491B1C9275520006BB68 /* Interactors */,
-				441449181C92729F0006BB68 /* Presenters */,
-				4414490F1C926B8A0006BB68 /* Views */,
-				44184A5B1C98EF70008EA66A /* Wireframes */,
-			);
-			name = Sketch;
-			sourceTree = "<group>";
-		};
-		4414490F1C926B8A0006BB68 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				44184A531C94C3CF008EA66A /* SketchView.xib */,
+				444114111DEBA9790012A90D /* Toolbar */,
+				447100C01DDAB4E200561421 /* SketchCoordinator.swift */,
+				4414491C1C9275AB0006BB68 /* SketchInteractor.swift */,
+				441449191C92736E0006BB68 /* SketchPresenter.swift */,
+				44EF1E391DD905F000E22540 /* SketchView.xib */,
 				441449161C9271BF0006BB68 /* SketchViewController.swift */,
 				44184A6F1C9DE70B008EA66A /* SketchViewInterface.swift */,
 			);
-			name = Views;
+			name = Sketch;
 			sourceTree = "<group>";
 		};
 		441449101C926BD70006BB68 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				449D55E11DD01E1C00E0707E /* Models */,
 				441449131C926D360006BB68 /* View */,
+				446189101E10506400193D4A /* FilterImageComposer.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -155,83 +169,46 @@
 		441449131C926D360006BB68 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				441449141C926D620006BB68 /* RootWireframe.swift */,
+				441449141C926D620006BB68 /* RootCoordinator.swift */,
 			);
 			name = View;
-			sourceTree = "<group>";
-		};
-		441449181C92729F0006BB68 /* Presenters */ = {
-			isa = PBXGroup;
-			children = (
-				441449191C92736E0006BB68 /* SketchPresenter.swift */,
-			);
-			name = Presenters;
-			sourceTree = "<group>";
-		};
-		4414491B1C9275520006BB68 /* Interactors */ = {
-			isa = PBXGroup;
-			children = (
-				4414491C1C9275AB0006BB68 /* SketchInteractor.swift */,
-			);
-			name = Interactors;
 			sourceTree = "<group>";
 		};
 		44184A571C97B51F008EA66A /* Select */ = {
 			isa = PBXGroup;
 			children = (
-				44184A5C1C98EFFE008EA66A /* Wireframes */,
-				44184A581C97B526008EA66A /* Interactors */,
-				44184A5A1C97B53B008EA66A /* Presenters */,
-				44184A591C97B536008EA66A /* Views */,
+				44184A671C98F545008EA66A /* ImagePickerInteractor.swift */,
+				447100BE1DDAB4A200561421 /* ImagePickerCoordinator.swift */,
 			);
 			name = Select;
-			sourceTree = "<group>";
-		};
-		44184A581C97B526008EA66A /* Interactors */ = {
-			isa = PBXGroup;
-			children = (
-				44184A671C98F545008EA66A /* SelectSketchInteractor.swift */,
-			);
-			name = Interactors;
-			sourceTree = "<group>";
-		};
-		44184A591C97B536008EA66A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		44184A5A1C97B53B008EA66A /* Presenters */ = {
-			isa = PBXGroup;
-			children = (
-				44184A631C98F3F6008EA66A /* SelectSketchPresenter.swift */,
-			);
-			name = Presenters;
-			sourceTree = "<group>";
-		};
-		44184A5B1C98EF70008EA66A /* Wireframes */ = {
-			isa = PBXGroup;
-			children = (
-				44184A551C94D6F7008EA66A /* SketchWireframe.swift */,
-			);
-			name = Wireframes;
-			sourceTree = "<group>";
-		};
-		44184A5C1C98EFFE008EA66A /* Wireframes */ = {
-			isa = PBXGroup;
-			children = (
-				44184A651C98F410008EA66A /* SelectSketchWireframe.swift */,
-			);
-			name = Wireframes;
 			sourceTree = "<group>";
 		};
 		44184A6E1C9A45A8008EA66A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4415B1591D8826C700FAE55A /* Crashlytics.framework */,
+				4415B1581D8826C700FAE55A /* Fabric.framework */,
 				44184A6A1C9A4598008EA66A /* FileBrowser.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		444114111DEBA9790012A90D /* Toolbar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Toolbar;
+			sourceTree = "<group>";
+		};
+		445BB5691DF35B16003FFD5D /* Empty */ = {
+			isa = PBXGroup;
+			children = (
+				445BB56A1DF35C24003FFD5D /* EmptyView.xib */,
+				445BB56C1DF35EB2003FFD5D /* EmptyViewController.swift */,
+				445BB56E1DF361B1003FFD5D /* EmptyViewCoordinator.swift */,
+				445BB5701DF36398003FFD5D /* EmptyViewInteractor.swift */,
+			);
+			name = Empty;
 			sourceTree = "<group>";
 		};
 		4482A38F1C8CE16900C100F6 = {
@@ -284,6 +261,15 @@
 			path = SketchUITests;
 			sourceTree = "<group>";
 		};
+		449D55E11DD01E1C00E0707E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				449D55E21DD01E4400E0707E /* Sketch.swift */,
+				4461890E1E0DA67900193D4A /* LineOverlayFilter.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -296,6 +282,7 @@
 				4482A3961C8CE16900C100F6 /* Resources */,
 				44184A691C98FF47008EA66A /* ShellScript */,
 				44184A6D1C9A4598008EA66A /* Embed Frameworks */,
+				4415B1571D88268200FAE55A /* ⚙ Fabric */,
 			);
 			buildRules = (
 			);
@@ -349,18 +336,23 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = BigPanza;
 				TargetAttributes = {
 					4482A3971C8CE16900C100F6 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = G8KQPBYZNV;
+						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
 					};
 					4482A3AD1C8CE16900C100F6 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0810;
 						TestTargetID = 4482A3971C8CE16900C100F6;
 					};
 					4482A3B81C8CE16900C100F6 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0810;
 						TestTargetID = 4482A3971C8CE16900C100F6;
 					};
 				};
@@ -390,8 +382,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				445BB56B1DF35C24003FFD5D /* EmptyView.xib in Resources */,
+				44EF1E3A1DD905F000E22540 /* SketchView.xib in Resources */,
 				4482A3A81C8CE16900C100F6 /* LaunchScreen.storyboard in Resources */,
-				44184A541C94C3CF008EA66A /* SketchView.xib in Resources */,
 				4482A3A51C8CE16900C100F6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +406,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4415B1571D88268200FAE55A /* ⚙ Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "⚙ Fabric";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 2637e476bd1bee13d0a7a8d76d0dac661af18a6e 67e10daec6ce4b93559f1f9369c4fbd73e763ce6587870fcc9b4d30b45b30951";
+		};
 		44184A691C98FF47008EA66A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -433,16 +440,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44184A641C98F3F6008EA66A /* SelectSketchPresenter.swift in Sources */,
 				4414491D1C9275AB0006BB68 /* SketchInteractor.swift in Sources */,
 				44184A701C9DE70B008EA66A /* SketchViewInterface.swift in Sources */,
-				44184A661C98F410008EA66A /* SelectSketchWireframe.swift in Sources */,
-				441449151C926D620006BB68 /* RootWireframe.swift in Sources */,
+				447100BF1DDAB4A200561421 /* ImagePickerCoordinator.swift in Sources */,
+				446189111E10506400193D4A /* FilterImageComposer.swift in Sources */,
+				441449151C926D620006BB68 /* RootCoordinator.swift in Sources */,
+				4461890F1E0DA67900193D4A /* LineOverlayFilter.swift in Sources */,
+				447100C11DDAB4E200561421 /* SketchCoordinator.swift in Sources */,
 				441449171C9271BF0006BB68 /* SketchViewController.swift in Sources */,
 				4414491A1C92736E0006BB68 /* SketchPresenter.swift in Sources */,
-				44184A561C94D6F7008EA66A /* SketchWireframe.swift in Sources */,
-				44184A681C98F545008EA66A /* SelectSketchInteractor.swift in Sources */,
+				44184A681C98F545008EA66A /* ImagePickerInteractor.swift in Sources */,
+				449D55E31DD01E4400E0707E /* Sketch.swift in Sources */,
+				445BB5711DF36398003FFD5D /* EmptyViewInteractor.swift in Sources */,
 				441449121C926CA90006BB68 /* AppDelegate.swift in Sources */,
+				445BB56D1DF35EB2003FFD5D /* EmptyViewController.swift in Sources */,
+				445BB56F1DF361B1003FFD5D /* EmptyViewCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,13 +514,15 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -546,8 +560,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -566,6 +582,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -575,15 +592,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Sketch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bigpanza.Sketch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bigpanza.sketch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -592,14 +617,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Sketch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bigpanza.Sketch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bigpanza.sketch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -607,10 +639,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = SketchTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bigpanza.SketchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sketch.app/Sketch";
 			};
 			name = Debug;
@@ -623,6 +657,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bigpanza.SketchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sketch.app/Sketch";
 			};
 			name = Release;
@@ -630,10 +665,12 @@
 		4482A3C91C8CE16900C100F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = SketchUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bigpanza.SketchUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Sketch;
 				USES_XCTRUNNER = YES;
 			};
@@ -646,6 +683,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bigpanza.SketchUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Sketch;
 				USES_XCTRUNNER = YES;
 			};
