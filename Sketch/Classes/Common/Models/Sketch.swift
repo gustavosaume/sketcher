@@ -17,7 +17,7 @@ struct Sketch {
   let lineOverlayFilter: LineOverlayFilter?
 
   var filters: [CIFilter] {
-    return [lineOverlayFilter].flatMap({ $0 as? CIFilterable }).map({ $0.ciFilter })
+    return [lineOverlayFilter].flatMap({ $0 }).map({ $0.ciFilter })
   }
 
   init(image: UIImage, lineOverlayFilter: LineOverlayFilter? = nil) {

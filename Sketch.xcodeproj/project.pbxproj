@@ -71,7 +71,6 @@
 		4415B1581D8826C700FAE55A /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		4415B1591D8826C700FAE55A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		44184A671C98F545008EA66A /* ImagePickerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePickerInteractor.swift; path = Classes/Modules/Select/ImagePickerInteractor.swift; sourceTree = "<group>"; };
-		44184A6A1C9A4598008EA66A /* FileBrowser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FileBrowser.framework; path = ../Carthage/Build/iOS/FileBrowser.framework; sourceTree = "<group>"; };
 		44184A6F1C9DE70B008EA66A /* SketchViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SketchViewInterface.swift; path = Classes/Modules/Sketch/SketchViewInterface.swift; sourceTree = "<group>"; };
 		445BB56A1DF35C24003FFD5D /* EmptyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EmptyView.xib; path = Classes/Modules/Empty/EmptyView.xib; sourceTree = "<group>"; };
 		445BB56C1DF35EB2003FFD5D /* EmptyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyViewController.swift; path = Classes/Modules/Empty/EmptyViewController.swift; sourceTree = "<group>"; };
@@ -188,7 +187,6 @@
 			children = (
 				4415B1591D8826C700FAE55A /* Crashlytics.framework */,
 				4415B1581D8826C700FAE55A /* Fabric.framework */,
-				44184A6A1C9A4598008EA66A /* FileBrowser.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -341,18 +339,18 @@
 				TargetAttributes = {
 					4482A3971C8CE16900C100F6 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = G8KQPBYZNV;
-						LastSwiftMigration = 0810;
+						DevelopmentTeam = 2RV2B5V4NS;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					4482A3AD1C8CE16900C100F6 = {
 						CreatedOnToolsVersion = 7.2.1;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0920;
 						TestTargetID = 4482A3971C8CE16900C100F6;
 					};
 					4482A3B81C8CE16900C100F6 = {
 						CreatedOnToolsVersion = 7.2.1;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0920;
 						TestTargetID = 4482A3971C8CE16900C100F6;
 					};
 				};
@@ -595,10 +593,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2RV2B5V4NS;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Sketch/Info.plist;
@@ -608,7 +605,8 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -619,10 +617,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2RV2B5V4NS;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Sketch/Info.plist;
@@ -631,7 +628,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -644,7 +642,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bigpanza.SketchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sketch.app/Sketch";
 			};
 			name = Debug;
@@ -657,7 +656,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bigpanza.SketchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sketch.app/Sketch";
 			};
 			name = Release;
@@ -670,7 +670,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bigpanza.SketchUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = Sketch;
 				USES_XCTRUNNER = YES;
 			};
@@ -683,7 +684,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bigpanza.SketchUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = Sketch;
 				USES_XCTRUNNER = YES;
 			};
